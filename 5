@@ -1,0 +1,31 @@
+using System;
+
+namespace starboy5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Settings.PrintPath();
+        }
+    }
+}
+
+using System;
+
+namespace starboy5
+{
+    public class Settings
+    {
+        private static readonly string configPath;
+        static Settings()
+        {
+            configPath = @"C:\SteamLibrary\steamapps\common\Sims 4";
+        }
+
+        public static void PrintPath()
+        {
+            Console.WriteLine($"Путь к файлу конфигурации: {configPath}");
+        }
+    }
+}
