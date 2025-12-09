@@ -1,0 +1,44 @@
+﻿using System;
+
+namespace starboy4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var book = new Book("978-5-17-101234-5", "Мастер и Маргарита", "Михаил Булгаков");
+            book.PrintBookInfo();
+            book.Title = "Преступление и наказание";
+            book.Author = "Фёдор Достоевский";
+            book.PrintBookInfo();
+        }
+    }
+}
+
+using System;
+
+namespace starboy4
+{
+    public class Book
+    {
+        private readonly string Isbn;
+        public string Title { get; set; }
+        public string Author { get; set; }
+
+        public Book(string isbn, string title, string author)
+        {
+            Isbn = isbn;
+            Title = title;
+            Author = author;
+        }
+
+        public void PrintBookInfo()
+        {
+            Console.WriteLine($"Книга: {Title}");
+            Console.WriteLine($"Автор: {Author}");
+            Console.WriteLine($"ISBN: {Isbn}");
+        }
+
+        public string ISBN => Isbn;
+    }
+}
